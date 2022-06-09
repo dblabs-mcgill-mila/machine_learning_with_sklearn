@@ -1,0 +1,16 @@
+name: ml_with_sk
+
+channels:
+  - conda-forge
+
+dependencies:
+  - scikit-learn >= 1.0
+  - pandas >= 1
+  - matplotlib-base
+  - seaborn
+  - jupyterlab
+  - notebook
+  - jupytext
+  - plotly
+# temp fix for https://github.com/ipython/ipython/issues/12467
+  - IPython<8

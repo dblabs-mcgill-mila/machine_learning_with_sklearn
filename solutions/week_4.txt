@@ -1,0 +1,48 @@
+QUIZ_1
+1.
+a,b
+
+2.
+a
+
+3.
+c
+
+
+QUIZ_2
+1.
+a
+
+2.
+a
+A tree will split the data and send them into different branches based on a rule defined at a node.
+Once that the rules are found, they are never changed.
+
+3.
+c
+When searching for a threshold, the idea is to separate data such that once the partition is done,
+the error in each partition is minimum.
+
+
+QUIZ_3
+1.
+b
+
+2.
+b
+
+3.
+b
+When predicting with a decision tree regressor, we will predict the mean of the training samples at a leaf.
+This value is indeed a constant.
+
+
+
+QUIZ_4
+1.
+b
+Deeper is a tree, more it will focus on separating noisy samples.
+Thus, in case of overfitting, one needs to reduce the depth of the tree or stop the tree to grow.
+
+2.
+a

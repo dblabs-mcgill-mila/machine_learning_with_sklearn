@@ -1,0 +1,1 @@
+This directory contains the notebooks, one for each week. It also has utils.py, which contains some standard functions used in the notebooks. 

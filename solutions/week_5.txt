@@ -1,0 +1,61 @@
+QUIZ_1
+
+1.
+a
+Bagging corresponds to bootstrap-aggregating. 
+Therefore, we resample the dataset with replacement several times to get several bootstrap samples. 
+Each bootstrap sample will be used to train a model. 
+The predictions of each model are aggregated via a vote or an average to give a final prediction for the ensemble as a whole.
+It is also possible to randomly resample the features using max_features with a value in the (0.0, 1.0) range but this is disabled by default (max_features=1.0 meaning all the features are used).
+For feature resampling, it is possible to choose between with replacement (bootstrap_features=True) or without replacement (bootstrap_features=False, the default).
+
+2.
+a
+
+3.
+a,c
+A random forest is a bagging ensemble using trees. 
+It includes an additional random resampling on the features at each split node in the trees.
+For your information, it is possible to build bagged ensembles of trees with split thresholds that are selected completely at random. 
+These models are named:
+- ExtraTreesClassifier
+- ExtraTreesRegressor
+
+
+QUIZ_2
+
+1.
+a,c,d
+
+2.
+b,c
+option a refers to bagging instead of boosting.
+option c refers to how the prediction function of a boosting ensemble is defined,
+while option b describes the successive iterations (what happens when calling the fit method).
+
+3.
+b
+To reduce the number of splits evaluated for each feature, the data can be discretized into bins.
+The subsequent gradient boosting algorithm is adapted to compute histograms instead of relying on computationally expensive sorting operations to assess which split is the best.
+This explains why the histogram-based variant of gradient boosting is so much more efficient than the traditional variant when training on datasets with a large number of features (typically 10,000 or more).
+
+4.
+a
+
+QUIZ_3
+
+1.
+a,d
+Usually, gradient boosting uses shallower trees than random forest.
+It is due to the fact that each tree corrects the errors of the previous ones and to avoid overfitting, these trees are required to be shallow.
+Also, by default all features are used when using gradient boosting, contrary to random forests that use a random subset of features to select the feature to split on when growing the trees.
+
+2.
+c
+The learning rate in gradient boosting controls the speed at which the residuals should be corrected each time a tree is added to the ensemble. 
+Since a random forest builds its trees independently of one another, this concept does not apply and there is no learning rate parameter for random forests.
+
+3.
+a,b
+Ensemble methods are usually more robust and lead to better statistical performance than single trees or linear models (though it depends on the dataset). 
+However, ensembles are more complex to interpret since the final decision is taken as a combination of the decisions of numerous predictors.

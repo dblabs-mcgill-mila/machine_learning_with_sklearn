@@ -1,0 +1,10 @@
+scikit-learn>=1.0
+pandas>=1
+matplotlib
+seaborn
+plotly
+jupyterlab
+notebook
+jupytext
+# temporary work-around for https://github.com/ipython/ipython/issues/12467
+IPython<8

@@ -1,0 +1,64 @@
+
+
+
+QUIZ_1
+1.
+a, c
+Cross-validation is a great tool to study results variability. 
+It also allow for checking the difference between the train and test errors. 
+Thus, it helps to understand if a predictive model is underfitting, overfitting, or generalizing.
+
+2.
+b
+In scikit-learn, the dummy estimators base their predictions only on statistics collected on y_train, irrespective of the values passed as X_train to dummy.fit(X_train, y_train) or X_test passed to dummy.predict(X_test). 
+It is only required to pass X_train to or X_test to those methods for the sake of keeping a compatible programming interface (API) with other scikit-learn estimators that do rely on X_train and X_test.
+
+3.
+b
+It depends on the value of the strategy parameter of the DummyClassifier class. 
+For instance DummyClassifier(strategy="stratified") makes random class predictions probabilities aligned on the empirical frequencies of the classes observed in y_train.
+
+QUIZ_2
+1.
+a,b
+Different hospitals represent different groups. 
+It could be the case that different hospitals have significant biases in the population of their patients (age, socio economic backgrounds, genetics, medical devices, diagnostic and treatment habits, etc.) Evaluating a machine learning model without taking this information into account would lead to overoptimistic results.
+
+QUIZ_3
+1.
+b,c
+option a is wrong because we would have overoptimistic results. 
+Indeed, we used some data to fix some internal parameters of our model and reuse the same data to make the evaluation. 
+The data used for the evaluation should never be used at any point to make a decision on tuning our model.
+
+QUIZ_4
+1.
+c
+
+2.
+b,c
+When increasing the regularization strength (lower value for C) in this example the number of true positives remains almost the same, the number of false positives increases (lowers the precision) and the number of false negatives decreases (increases the recall).
+Intuitively, the precision measures the ability of the model to not make mistakes among the samples actually classified as positive. 
+The recall is the ability of the model to find all the samples that should have been classified as positive.
+
+QUIZ_5
+1.
+a
+
+2.
+a
+
+3.
+a
+"neg_mean_squared_error" is an alias for the negative of the Mean Squared Error. 
+Lower error values means a better model. 
+Considering the negative error (i.e. multiplying by -1) reverses this relationship. 
+In general, the scoring parameter passed to scikit-learn model selection utilities expects the convention that "higher is better", 
+hence the slightly counter intuitive use of "neg_mean_squared_error" instead of "mean_squared_error" in scikit-learn.
+
+4.
+b
+The mean squared error is always positive or zero (never negative) since:
+taking the square of a value maps a negative value to a positive value, zero to zero and a positive value to a positive value;
+the average of an array of positive values is a positive value.
+Therefore the negative mean squared error is guaranteed to be negative or zero by reversing the sign of the mean squared error (i.e. multiplying by -1).
